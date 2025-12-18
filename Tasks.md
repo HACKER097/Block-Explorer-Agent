@@ -1,7 +1,7 @@
 # MCP
 
-- [ ] Basic structure
-- [ ] Figure out best way to get required data
+- [x] Basic structure
+- [x] Figure out best way to get required data
 
 ## Endpoints
 
@@ -10,7 +10,7 @@
 - [ ] Transaction to execution trace
 - [ ] Contract to source code
 - [x] Details about a transaction
-- [ ] Details about a contract
+- [x] Details about a contract
 - [ ] Details about a address
 - [ ] Suspicious addresses database call
 

@@ -45,8 +45,26 @@ This app is a block explorer, before its an agent, I am not sure how much time I
 
 I think a simple TUI explorer would be good, with a prompt to ask the agent and suggestions. Kinda like if Claude Code was a block explorer.
 
+I will assume I am not allowed to use ethscan API or something similar, otherwise I am using someone elses block explorer instead of writing my own.
+
 ### Agent
 
 Pretty simple, ask question, agent thinks, gets data, and returns a response.
 
 The agent will need a bunch of pre defined exploit patterns, also the ability to lookup suspicious addresses.
+
+## Implementation
+
+### MCP
+
+- FastMCP for the MCP server
+- Panoramix for decompiling (used by etherscan.io) [Github](https://github.com/palkeo/panoramix)
+- Web3 for interacting with the blockchain
+- Kaggle dataset to get more context: https://www.kaggle.com/datasets/hamishhall/labelled-ethereum-addresses
+- Using ethscan api for context: https://eth-labels-production.up.railway.app/labels/{addr}
+
+#### Transaction trace issue:
+
+- I can't find a good way to get the transaction trace
+- Either I use a paid API, or I use caste, which is VERY slow
+- This is not good, because the transaction is likelt the most helpful in finding potential exploits
