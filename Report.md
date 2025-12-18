@@ -47,5 +47,6 @@ I think a simple TUI explorer would be good, with a prompt to ask the agent and 
 
 ### Agent
 
+Pretty simple, ask question, agent thinks, gets data, and returns a response.
 
-
+The agent will need a bunch of pre defined exploit patterns, also the ability to lookup suspicious addresses.
