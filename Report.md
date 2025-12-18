@@ -26,7 +26,7 @@ Here are the required constraints/features I found in the prompt:
 - The agent should be able to read blokchain data, and make it's next decisions based on it
 - I imagine a reasoning loop, where agent reads data, interprits it, decides what data to read next, until its satisfied and can make a decision
 
-## Implementation
+## Design
 
 ### MCP
 
@@ -39,6 +39,13 @@ List of endpoints that might be useful:
 - **Transaction to execution trace**: Given a transaction hash, return the execution trace
 - **Contract to source code**: Given a contract address, return the source code, decompile if needed
 
+### Block explorer
+
+This app is a block explorer, before its an agent, I am not sure how much time I want to commit to the block explorer part. At this point I am going to fully commit to the Agentic part, so you ask the agent for everything, instead of clicking things. Will have to plan something else if its not usable.
+
+I think a simple TUI explorer would be good, with a prompt to ask the agent and suggestions. Kinda like if Claude Code was a block explorer.
+
 ### Agent
 
-I want the agent 
+
+
