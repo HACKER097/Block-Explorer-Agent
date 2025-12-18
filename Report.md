@@ -68,3 +68,4 @@ The agent will need a bunch of pre defined exploit patterns, also the ability to
 - I can't find a good way to get the transaction trace
 - Either I use a paid API, or I use caste, which is VERY slow
 - This is not good, because the transaction is likelt the most helpful in finding potential exploits
+- Fow now I have put in a placeholder which uses an API, I'll figure something out later
