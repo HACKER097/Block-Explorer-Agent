@@ -9,7 +9,7 @@
 - [ ] Address to transactions
 - [ ] Transaction to execution trace
 - [ ] Contract to source code
-- [ ] Details about a transaction
+- [x] Details about a transaction
 - [ ] Details about a contract
 - [ ] Details about a address
 - [ ] Suspicious addresses database call
