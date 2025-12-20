@@ -1,5 +1,5 @@
 import json
-from typing import Dict, Any, Union
+from typing import Any, Union
 from web3 import Web3
 from fastmcp import FastMCP
 import Decompiler
@@ -11,9 +11,19 @@ w3 = Web3(Web3.HTTPProvider(RPC_URL))
 mcp = FastMCP("blockchain-mcp")
 
 @mcp.tool
-def transaction_to_details(tx_hash: str) -> Dict:
+def transaction_to_details(tx_hash: str) -> str:
     tx = w3.eth.get_transaction(tx_hash)
     return Web3.to_json(tx)
+
+@mcp.tool
+def block_to_transactions(block_number: str) -> str:
+    block = w3.eth.get_block(int(block_number))
+    return Web3.to_json(block)
+
+@mcp.tool
+def address_to_transactions(address: str) -> str:
+    # Need API
+    return "Not implemented"
 
 @mcp.tool
 def get_transaction_trace(tx_hash: str) -> str:
@@ -43,14 +53,11 @@ def get_contract_details(address: str) -> str:
     
     return Web3.to_json(info)
 
+@mcp.tool
 def get_contract_code(address: str) -> str:
     checksum_address = Web3.to_checksum_address(address)
-    
     bytecode = w3.eth.get_code(checksum_address)
-
-    info = {
-        "code": Decompiler.decompile(str(bytecode.hex())),
-    }
+    info = {"code": Decompiler.decompile(str(bytecode.hex()))}
 
 @mcp.tool
 def get_address_details(address: str) -> str:

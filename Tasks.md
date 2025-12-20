@@ -5,14 +5,14 @@
 
 ## Endpoints
 
-- [ ] Block to transactions
+- [x] Block to transactions
 - [ ] Address to transactions
 - [ ] Transaction to execution trace
-- [ ] Contract to source code
+- [x] Contract to source code
 - [x] Details about a transaction
 - [x] Details about a contract
-- [ ] Details about a address
-- [ ] Suspicious addresses database call
+- [x] Details about a address
+- [x] Suspicious addresses database call
 
 
 # Block explorer
