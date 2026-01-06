@@ -5,6 +5,7 @@ from fastmcp import FastMCP
 import Decompiler
 from Context import get_context, get_context_api
 from browser_connect import get_active_etherscan_url
+import requests
 
 RPC_URL = "https://eth.llamarpc.com"
 w3 = Web3(Web3.HTTPProvider(RPC_URL))
@@ -25,6 +26,13 @@ def get_user_etherscan_tab_url() -> str:
 def transaction_to_details(tx_hash: str) -> str:
     tx = w3.eth.get_transaction(tx_hash)
     return Web3.to_json(tx)
+
+@mcp.tool
+def eth_signature_decode_lookup(signature: str) -> str:
+   # Example request: curl "https://www.4byte.directory/api/v1/signatures/?hex_signature=0xa9059cbb"
+   r = requests.get(f"https://www.4byte.directory/api/v1/signatures/?hex_signature={signature}")
+   return r.json()
+    
 
 @mcp.tool
 def get_latest_block_number() -> str:
@@ -73,14 +81,14 @@ def address_to_transactions(address: str) -> str:
     # Need API
     return "Not implemented"
 
-@mcp.tool
-def get_transaction_trace(tx_hash: str) -> str:
-    response = w3.provider.make_request("debug_traceTransaction", [ tx_hash, {"tracer": "callTracer"}])
-
-    if 'result' in response:
-        return response['result']
-    elif 'error' in response:
-        return response['error']
+# @mcp.tool
+# def get_transaction_trace(tx_hash: str) -> str:
+#     response = w3.provider.make_request("debug_traceTransaction", [ tx_hash, {"tracer": "callTracer"}])
+#
+#     if 'result' in response:
+#         return response['result']
+#     elif 'error' in response:
+#         return response['error']
 
 @mcp.tool
 def get_contract_details(address: str) -> str:

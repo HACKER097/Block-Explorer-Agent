@@ -84,9 +84,14 @@ This required a lot of playing around with, I iterated on the prompt in this loo
 
 In the end, I added a lot more mcp tools that I initially thought would be needed. Everytime I thought the agent was doing too much work to get some data, or didn't even try to get data that would have been very helpful, I added an mcp
 
+https://www.4byte.directory/
+
 #### Transaction trace issue:
 
 - I can't find a good way to get the transaction trace
 - Either I use a paid API, or I use caste, which is VERY slow
 - This is not good, because the transaction is likelt the most helpful in finding potential exploits
 - Fow now I have put in a placeholder which uses an API, I'll figure something out later
+
+
+
