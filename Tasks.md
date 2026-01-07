@@ -39,16 +39,13 @@
   - [x] Active tab detection
   - [ ] Handle multiple Etherscan tabs
 - [x] Contract code decompilation with Panoramix
-- [ ] Improve transaction trace performance
 - [ ] Add caching layer for frequently accessed data
-- [ ] Implement rate limiting for API calls
 
 # Block Explorer
 
 - [x] Initial UI design - TUI vs chat
 - [x] Decide on hybrid approach (traditional UI + agent chat)
 - [ ] Implement basic web interface
-- [ ] Integrate agent chat with Etherscan tab context
 
 # Agent
 

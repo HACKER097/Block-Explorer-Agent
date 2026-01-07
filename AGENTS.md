@@ -1,1 +1,1 @@
-Prompts/blockchain-agent.md
+.opencode/agent/blockchain-analyst.md
