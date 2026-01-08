@@ -17,6 +17,7 @@ permission:
     "@blockchain-context-enricher": "allow"
     "@blockchain-reality-check": "allow"
     "@blockchain-report-generator": "allow"
+    "@blockchain-fast-mode": "allow"
 mcp:
   blockchain-explorer:
     type: local
@@ -64,6 +65,12 @@ The reality check agent will:
 - Help prevent false positives
 
 ### Query-Based Routing
+
+**Fast Mode** ("fast", "quick check", speed priority):
+- Spawn @blockchain-fast-mode with full task description
+- Return @blockchain-fast-mode output directly
+- Skip the multi-agent delegation chain
+- Activated by: "fast", "quick", "speed" keywords or context-aware simple queries
 
 **Quick Check** ("is this tx safe?", "check this address"):
 - Spawn @blockchain-data-collector + @blockchain-context-enricher in parallel
@@ -113,9 +120,11 @@ You should rarely, if ever, call MCP tools directly. Your subagents exist for th
 | Get labels/context     | @blockchain-context-enricher                              |
 | Challenge findings     | @blockchain-reality-check (always after security analysis)|
 | Format output          | @blockchain-report-generator                              |
+| **Speed priority**     | @blockchain-fast-mode (all-in-one analysis)               |
 
 ### Common Patterns
 
+- **Speed priority** → @blockchain-fast-mode (single-pass, no delegation)
 - **Any analysis** → @data-collector + @context-enricher (parallel) → @security-analyzer → @reality-check → @report-generator
 - **Quick check** → @data-collector + @context-enricher (parallel) → @security-analyzer → @report-generator
 - **Complex investigation** → Multiple spawns of @data-collector + @context-enricher → @security-analyzer → @reality-check → @report-generator
