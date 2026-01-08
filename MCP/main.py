@@ -106,7 +106,7 @@ def _get_token_meta(token_address):
         return {"symbol": "Unknown", "decimals": 18} # Fallback
 
 @mcp.tool
-def eth_signature_decode_lookup(signature: str) -> str:
+def eth_function_signature_decode_lookup(signature: str) -> str:
    r = requests.get(f"https://www.4byte.directory/api/v1/signatures/?hex_signature={signature}")
    return r.text
 
@@ -163,7 +163,7 @@ def get_contract_details(address: str) -> str:
         "bytecode_size": len(bytecode),
         "balance_wei": w3.eth.get_balance(checksum_address),
         "transaction_count": w3.eth.get_transaction_count(checksum_address),
-        "context": get_context_api(address)
+        "context": get_addr_context_api(checksum_address)
     }
     return Web3.to_json(info)
 
@@ -183,7 +183,7 @@ def get_address_details(address: str) -> str:
         "balance_eth": float(Web3.from_wei(w3.eth.get_balance(checksum_address), 'ether')),
         "nonce": w3.eth.get_transaction_count(checksum_address),
         "is_contract": len(w3.eth.get_code(checksum_address)) > 0,
-        "context": get_addr_context(checksum_address)
+        "context": get_addr_context_api(checksum_address)
     }
     return Web3.to_json(info)
 
