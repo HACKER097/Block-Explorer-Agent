@@ -1,6 +1,7 @@
 ---
 description: Provides realistic review of security findings, and give final conclusion. Challenges alarmist conclusions and looks for benign explanations. Uses MCP data to prove why suspicious patterns might actually be legitimate.
 mode: subagent
+model: opencode/big-pickle
 temperature: 0.4
 maxSteps: 15
 tools:

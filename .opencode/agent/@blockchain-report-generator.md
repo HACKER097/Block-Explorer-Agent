@@ -1,6 +1,7 @@
 ---
 description: Synthesizes blockchain analysis findings into clear, user-friendly reports. Takes data from other agents and produces final output.
 mode: subagent
+model: opencode/big-pickle
 temperature: 0.5
 maxSteps: 5
 mcp:

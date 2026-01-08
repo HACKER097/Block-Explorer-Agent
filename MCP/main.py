@@ -10,13 +10,10 @@ import Decompiler
 from Context import get_addr_context_api
 from browser_connect import get_active_etherscan_url
 
-RPC_URL = "https://eth.llamarpc.com"
+RPC_URL = "https://rpc.flashbots.net"
 w3 = Web3(Web3.HTTPProvider(RPC_URL))
 mcp = FastMCP("blockchain-mcp")
 
-# ABI including transfer. 
-# Note: decode_function_input only checks INPUTS, so the return type mismatch 
-# for non-standard tokens like USDT (which return void instead of bool) won't break decoding.
 ERC20_ABI = [
     {"constant": True, "inputs": [], "name": "name", "outputs": [{"type": "string"}], "type": "function"},
     {"constant": True, "inputs": [], "name": "symbol", "outputs": [{"type": "string"}], "type": "function"},
@@ -148,9 +145,9 @@ def get_erc20_details(token_address: str) -> str:
 
     return json.dumps(details, default=str)
 
-@mcp.tool
-def address_to_transactions(address: str) -> str:
-    return "Not implemented"
+# @mcp.tool
+# def address_to_transactions(address: str) -> str:
+#     return "Not implemented"
 
 @mcp.tool
 def get_contract_details(address: str) -> str:

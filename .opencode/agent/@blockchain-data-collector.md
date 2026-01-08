@@ -1,6 +1,7 @@
 ---
 description: Efficiently gathers blockchain data from MCP tools. Makes parallel data retrieval calls. Does NOT analyze—just collect.
 mode: subagent
+model: opencode/big-pickle
 temperature: 0.1
 maxSteps: 15
 tools:

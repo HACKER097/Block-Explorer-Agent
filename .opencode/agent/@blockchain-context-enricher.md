@@ -1,6 +1,7 @@
 ---
 description: Enriches blockchain addresses/transactions with external context including labels, reputation data, and known database entries. Uses MCP tools FIRST.
 mode: subagent
+model: opencode/big-pickle
 temperature: 0.1
 maxSteps: 10
 tools:
