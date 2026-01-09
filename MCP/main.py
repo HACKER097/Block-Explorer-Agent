@@ -5,7 +5,6 @@ from fastmcp import FastMCP
 from hexbytes import HexBytes
 import requests
 
-# We don't need these strictly for this specific fix, but keeping imports
 import Decompiler
 from Context import get_addr_context_api
 from browser_connect import get_active_etherscan_url
@@ -85,7 +84,6 @@ def transaction_to_details(tx_hash: str) -> str:
 
 
 def _get_token_meta(token_address):
-    """Helper to get decimals/symbol with hardcoded fallbacks for major tokens to speed up response."""
     try:
         addr_lower = token_address.lower()
         # Fast path for USDT/USDC to avoid RPC calls
@@ -94,7 +92,6 @@ def _get_token_meta(token_address):
         if addr_lower == "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48":
             return {"symbol": "USDC", "decimals": 6}
         
-        # RPC path
         contract = w3.eth.contract(address=w3.to_checksum_address(token_address), abi=ERC20_ABI)
         decimals = contract.functions.decimals().call()
         symbol = contract.functions.symbol().call()

@@ -38,6 +38,14 @@ You gather external context about addresses, contracts, and tokens using MCP too
 - **Historical context**: First seen date, transaction history patterns
 - **Token metadata**: Full token details beyond basic ERC-20
 
+## Websearch usage
+
+- You may use webfetch to find off chain information
+  - For example, you may use a search engine to find a website that has information about a specific address
+  - You may use a search engine to find a website that has information about a specific token
+- To see if an address/token/contract address is known or popular
+- When searching about a perticular address/token/contract, DO NOT ADD KEYWORDS IN THE SEARCH QUERY, just the raw address
+
 ## MCP-First Data Gathering
 
 **ALWAYS use MCP tools first** for:

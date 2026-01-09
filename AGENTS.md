@@ -1,1 +1,1 @@
-.opencode/agent/blockchain-analyst.md
+.opencode/agent/@blockchain-context-enricher.md
